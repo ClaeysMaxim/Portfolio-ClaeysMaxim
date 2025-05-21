@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/src/images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/src/images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/src/images/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="icon" type="image/png" href="./src/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./src/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./src/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./src/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./src/styles/main.css">
     <title>Home | Portfolio</title>
 </head>
 
 <body>
+    <script src="./github-pages-fix.js"></script>
     <header>
         <nav class="ham__menu" aria-label="Main navigation">
             <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
             <div class="right-buttons" aria-label="Theme toggle">
                 <button id="theme-toggle-sun" class="ham__sun" aria-label="Switch to light mode">
-                    <img src="src/images/icons/sun.svg" alt="Sun icon">
+                    <img src="./src/images/icons/sun.svg" alt="Sun icon">
                 </button>
                 <button id="theme-toggle-moon" class="ham__moon" aria-label="Switch to dark mode">
-                    <img src="src/images/icons/moon.svg" alt="Moon icon">
+                    <img src="./src/images/icons/moon.svg" alt="Moon icon">
                 </button>
             </div>
             <button class="ham__burger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
                 aria-controls="nav-links">
-                <img src="src/images/icons/burger.svg" alt="Menu icon">
+                <img src="./src/images/icons/burger.svg" alt="Menu icon">
             </button>
             <ul class="nav-links" id="nav-links" aria-label="Site navigation">
                 <li><a class="active-page" href="index.html" aria-current="page">Home</a></li>
@@ -56,7 +57,7 @@
                 </p>
                 <div class="intro__actions">
                     <a class="link-button" href="projects.html" aria-label="Bekijk mijn projecten">
-                        Bekijk mijn projecten <img src="src/images/icons/arrow-right.svg" alt="Arrow right">
+                        Bekijk mijn projecten <img src="./src/images/icons/arrow-right.svg" alt="Arrow right">
                     </a>
                 </div>
             </div>
@@ -70,7 +71,7 @@
                     <div class="carousel__slide active" role="group" aria-roledescription="slide" aria-label="1 van 3"
                         aria-current="true">
                         <div class="project__item">
-                            <img src="src/images/projectImages/make-IT-happen.png"
+                            <img src="./src/images/projectImages/make-IT-happen.png"
                                 alt="Afbeelding van Make IT Happen project">
                             <h3>Make IT Happen</h3>
                             <p>
@@ -84,7 +85,7 @@
                     <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 van 3"
                         aria-hidden="true">
                         <div class="project__item">
-                            <img src="src/images/projectImages/stam.png" alt="Afbeelding van STAM project">
+                            <img src="./src/images/projectImages/stam.png" alt="Afbeelding van STAM project">
                             <h3>STAM Ghent - remake</h3>
                             <p>
                                 Hier kregen we de opdracht om de website van het STAM museum te gent na te maken, echter
@@ -96,7 +97,8 @@
                     <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 van 3"
                         aria-hidden="true">
                         <div class="project__item">
-                            <img src="src/images/projectImages/no-planetB.png" alt="Afbeelding van No Planet B project">
+                            <img src="./src/images/projectImages/no-planetB.png"
+                                alt="Afbeelding van No Planet B project">
                             <h3>No Planet B</h3>
                             <p>
                                 In dit project leerden we vooral om te gaan met een responsive design voor websites. We
@@ -131,16 +133,16 @@
             <div class="social-links" aria-label="Social media links">
                 <a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
                     aria-label="LinkedIn profile">
-                    <img src="src/images/icons/linkedin.svg" alt="LinkedIn">
+                    <img src="./src/images/icons/linkedin.svg" alt="LinkedIn">
                 </a>
                 <a href="https://github.com/ClaeysMaxim" target="_blank" aria-label="GitHub profile">
-                    <img src="src/images/icons/github.svg" alt="GitHub">
+                    <img src="./src/images/icons/github.svg" alt="GitHub">
                 </a>
             </div>
             <p>© 2025 Maxim Claeys</p>
         </div>
     </footer>
-    <script src="build/app.js"></script>
+    <script src="./build/app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,74 @@
+@import url("./reset.css");
+@import url("./fonts.css");
+@import url("./constants.css");
+@import url("./settings.css");
+@import url("./header.css");
+@import url("./footer.css");
+@import url("./introHome.css");
+@import url("./intro.css");
+@import url("./contact-form.css");
+@import url("./about.css");
+@import url("./homeProjects.css");
+@import url("./projectsPage.css");
+@import url("./carousel.css");
+@import url("./masks.css");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* This makes the main content expand to fill available space */
+  padding: 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 48rem) {
+  body {
+    padding: 0 4rem;
+    view-transition-name: page;
+
+    & main {
+      padding: 0;
+    }
+  }
+}
+
+@starting-style {
+  .intro__homepage {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .projects__section {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .popover {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .contact-form {
+    transform: translateX(100%);
+    opacity: 0;
+    background-color: var(--tint-color);
+
+    &__label {
+      opacity: 0;
+    }
+
+    &__button {
+      transform: rotate(-360deg) scale(1.1);
+    }
+  }
+}

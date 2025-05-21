@@ -1,0 +1,83 @@
+.carousel {
+  position: relative;
+  width: var(--width-100);
+  max-width: var(--size-900);
+  margin: 0 auto;
+  padding: var(--space-md);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.carousel__track {
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  transform: translateX(0);
+  transition: transform var(--transition-medium) ease-in-out;
+}
+
+.carousel__slide {
+  grid-column: span 1;
+  transform: scale(0.9);
+  transition: transform var(--transition-medium) ease;
+  padding: var(--space-md);
+  user-select: none; /* Prevent text selection during swipe */
+  display: grid;
+  justify-items: center; /* Center items horizontally */
+  min-height: var(--size-500);
+}
+
+.carousel__slide.active {
+  transform: scale(1);
+}
+
+.carousel__nav {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.carousel__indicator {
+  width: var(--space-md);
+  height: var(--space-xs);
+  background-color: var(--subtle-color);
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+    width var(--transition-fast);
+}
+
+.carousel__indicator.active {
+  width: var(--space-xl);
+  background-color: var(--accent-color);
+}
+
+.carousel .project__item {
+  max-width: var(--size-800);
+  height: var(--height-100);
+  display: grid;
+  grid-template-rows: auto auto 1fr; /* Image, heading, and text */
+}
+
+.carousel .project__item img {
+  width: var(--width-100);
+  height: var(--size-250);
+  object-fit: cover;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.carousel .project__item h3 {
+  margin: var(--space-md) 0 var(--space-sm);
+  padding: 0 var(--space-md);
+}
+
+.carousel .project__item p {
+  padding: 0 var(--space-md) var(--space-md);
+  grid-row: 3;
+  display: block;
+  overflow: auto;
+  max-height: var(--size-200);
+  text-align: center;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="src/styles/main.css">
+    <title>Contact | Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav class="ham__menu" aria-label="Main navigation">
+            <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
+            <div class="right-buttons" aria-label="Theme toggle">
+                <button id="theme-toggle-sun" class="ham__sun" aria-label="Switch to light mode">
+                    <img src="src/images/icons/sun.svg" alt="Sun icon">
+                </button>
+                <button id="theme-toggle-moon" class="ham__moon" aria-label="Switch to dark mode">
+                    <img src="src/images/icons/moon.svg" alt="Moon icon">
+                </button>
+            </div>
+            <button class="ham__burger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <img src="src/images/icons/burger.svg" alt="Menu icon">
+            </button>
+            <ul class="nav-links" id="nav-links" aria-label="Site navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active-page" href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" aria-labelledby="contact-heading">
+        <section class="contact-hero">
+            <div class="contact-hero__content">
+                <h1 id="contact-heading" class="contact-hero__title" aria-label="Contact me">Contacteer mij</h1>
+                <p class="contact-hero__text" aria-label="If you have a question or project idea">Heb je een vraag, een
+                    project idee of wil je gewoon even hallo zeggen? Ik
+                    sta altijd open voor nieuwe mogelijkheden en samenwerkingen.</p>
+                <p class="contact-hero__text" aria-label="Fill out the form or reach me through other channels">Vul het
+                    formulier in of bereik me via een van de onderstaande kanalen!</p>
+
+                <h2 class="contact-options-title">Contact opties</h2>
+                <div class="contact-options" aria-label="Contact options">
+                    <div class="contact-option">
+                        <div class="contact-option__icon">
+                            <img src="src/images/icons/email.svg" alt="Email icon">
+                        </div>
+                        <div class="contact-option__text">
+                            <h3>Email</h3>
+                            <p>maxim.claeys@student.arteveldehs.be</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-option">
+                        <div class="contact-option__icon">
+                            <img src="src/images/icons/linkedin.svg" alt="LinkedIn icon">
+                        </div>
+                        <div class="contact-option__text">
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
+                                    aria-label="Visit my LinkedIn profile">Maxim
+                                    Claeys</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-option">
+                        <div class="contact-option__icon">
+                            <img src="src/images/icons/github.svg" alt="GitHub icon">
+                        </div>
+                        <div class="contact-option__text">
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/ClaeysMaxim" target="_blank"
+                                    aria-label="Visit my GitHub profile">ClaeysMaxim</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="contact-form-section" aria-label="Contact form section">
+            <div class="contact-form-container">
+                <h2 class="contact-form__title" aria-label="Send a message">Stuur een bericht</h2>
+                <form action="#" method="post" class="contact-form__form" aria-label="Contact form"
+                    aria-describedby="form-description">
+                    <p id="form-description" class="sr-only" aria-label="Fill out this form to contact me">Vul dit
+                        formulier in om contact met
+                        mij op te nemen.</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="contact-form__label">Naam</label>
+                            <input type="text" id="name" name="name" class="contact-form__input"
+                                placeholder="Bert Koert" required aria-required="true" aria-label="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="contact-form__label">Email</label>
+                            <input type="email" id="email" name="email" class="contact-form__input"
+                                placeholder="naam@example.be" required aria-required="true"
+                                aria-label="Your email address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="contact-form__label">Onderwerp</label>
+                        <input type="text" id="subject" name="subject" class="contact-form__input"
+                            placeholder="Waarover gaat je bericht?" aria-label="Subject of your message">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="contact-form__label">Bericht</label>
+                        <textarea id="message" name="message" class="contact-form__textarea"
+                            placeholder="Vertel me meer over je vraag of project" required aria-required="true"
+                            aria-label="Your message"></textarea>
+                    </div>
+
+                    <div class="form-feedback sr-only" aria-live="polite"></div>
+
+                    <button type="submit" class="contact-form__button" aria-label="Send message">
+                        <span>Verstuur</span>
+                        <img src="src/images/icons/arrow-right.svg" alt="" class="button-icon">
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="footnote">
+            <div class="social-links" aria-label="Social media links">
+                <a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
+                    aria-label="LinkedIn profile">
+                    <img src="src/images/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/ClaeysMaxim" target="_blank" aria-label="GitHub profile">
+                    <img src="src/images/icons/github.svg" alt="GitHub">
+                </a>
+            </div>
+            <p>© 2025 Maxim Claeys</p>
+        </div>
+    </footer>
+    <script src="build/app.js"></script>
+</body>
+
+</html>

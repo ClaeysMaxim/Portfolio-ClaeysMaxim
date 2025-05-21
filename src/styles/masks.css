@@ -1,0 +1,40 @@
+/* Mask 1 */
+.project__image {
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 10%,
+    black 30%
+  );
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 10%,
+    black 30%
+  );
+  transition: all var(--transition-medium) ease;
+}
+
+.project__card:hover .project__image {
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, black 20%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, black 20%);
+  transform: scale(1.05);
+}
+
+/* Mask 2 */
+.about__skill-item {
+  & img {
+    width: var(--size-60);
+    height: var(--size-60);
+    padding: var(--space-xs);
+    background-color: var(--shade-color);
+    border-radius: var(--radius-round);
+    transition: all var(--transition-medium) ease;
+  }
+
+  &:hover img {
+    border-radius: var(--radius-sm);
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+  }
+}

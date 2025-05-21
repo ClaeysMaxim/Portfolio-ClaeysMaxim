@@ -1,0 +1,33 @@
+:root {
+  --base-color: hsla(224, 35%, 12%, 1);
+  --contrast-color: hsla(0, 0%, 98%, 1);
+  --shade-color: hsla(225, 40%, 10%, 1);
+  --subtle-color: hsla(225, 25%, 22%, 1);
+  --tint-color: hsla(230, 30%, 65%, 1);
+  --accent-color: hsla(280, 70%, 60%, 1);
+  --accent-color-rgb: 171, 71, 188;
+  --accent-subtle-color: hsla(180, 80%, 65%, 1);
+  --accent-subtle-color-rgb: 102, 204, 204;
+  --sun-color: hsla(45, 100%, 75%, 1);
+}
+
+.lightmode {
+  --base-color: hsla(210, 30%, 98%, 1);
+  --contrast-color: hsla(224, 40%, 12%, 1);
+  --shade-color: hsla(225, 35%, 90%, 1);
+  --subtle-color: hsla(225, 30%, 80%, 1);
+  --tint-color: hsla(230, 25%, 35%, 1);
+  --accent-color: rgb(255, 49, 118);
+  --accent-color-rgb: 255, 49, 118;
+  --accent-subtle-color: rgb(208, 46, 240);
+  --accent-subtle-color-rgb: 208, 46, 240;
+  --sun-color: hsla(45, 95%, 65%, 1);
+}
+
+body {
+  background-color: var(--base-color);
+  color: var(--contrast-color);
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+  font-family: var(--font-primary);
+}

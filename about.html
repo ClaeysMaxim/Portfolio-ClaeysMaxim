@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="src/styles/main.css">
+    <title>About | Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav class="ham__menu" aria-label="Main navigation">
+            <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
+            <div class="right-buttons" aria-label="Theme toggle">
+                <button id="theme-toggle-sun" class="ham__sun" aria-label="Switch to light mode">
+                    <img src="src/images/icons/sun.svg" alt="Sun icon">
+                </button>
+                <button id="theme-toggle-moon" class="ham__moon" aria-label="Switch to dark mode">
+                    <img src="src/images/icons/moon.svg" alt="Moon icon">
+                </button>
+            </div>
+            <button class="ham__burger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <img src="src/images/icons/burger.svg" alt="Menu icon">
+            </button>
+            <ul class="nav-links" id="nav-links" aria-label="Site navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a class="active-page" href="about.html" aria-current="page">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="-1" aria-labelledby="about-heading" role="main">
+        <section class="about" aria-labelledby="about-heading">
+            <h1 id="about-heading" class="about__title">Wie ben ik?</h1>
+            <div class="about__profile" aria-label="Profile information">
+                <img src="src/images/profile.png" alt="Profile picture of Claeys Maxim" class="about__photo">
+                <div class="about__bio">
+                    <p class="about__description">
+                        Welkom op mijn portfolio! Ik ben een gepassioneerde ontwikkelaar met een liefde voor het creëren
+                        van intuïtieve en toegankelijke web-ervaringen. Met een achtergrond in zowel design als
+                        ontwikkeling, streven ik ernaar om websites te bouwen die niet alleen visueel aantrekkelijk
+                        zijn, maar ook functioneel en gebruiksvriendelijk.
+                    </p>
+                    <button id="open-info-popover" class="about__popover-button" popovertarget="info-popover"
+                        aria-describedby="info-popover" aria-label="More information about me">
+                        Meer Info
+                    </button>
+                    <dialog id="info-popover" class="about__popover" popover aria-labelledby="popover-title">
+                        <h2 id="popover-title">Meer Info</h2>
+                        <p>
+                            Naast mijn passie voor webontwikkeling ben ik altijd op zoek naar nieuwe technologieën en
+                            tools om mijn werk te verbeteren.
+                            Ik leer graag met frameworks zoals React en Node.js werken, en ik heb ervaring met het
+                            ontwerpen
+                            van gebruiksvriendelijke interfaces in Figma.
+                            Mijn doel is om innovatieve oplossingen te creëren die zowel functioneel als esthetisch
+                            aantrekkelijk zijn.
+                        </p>
+                        <button id="close-info-popover" class="about__close-button"
+                            aria-label="Close popover">Sluiten</button>
+                    </dialog>
+                </div>
+            </div>
+            <div class="about__skills" aria-labelledby="skills-heading">
+                <h2 id="skills-heading" class="about__subtitle">Vaardigheden</h2>
+                <ul class="about__skills-list" aria-label="List of skills">
+                    <li class="about__skill-item">
+                        HTML & CSS
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+                            alt="HTML5" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        JavaScript
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        Docker
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+                            alt="Docker" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        Express
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
+                            alt="Express" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        Figma
+                        <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma" width="40"
+                            height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        Git
+                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40"
+                            height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        MySQL
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
+                            alt="MySQL" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        Node.js
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+                            alt="Node.js" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        PHP
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+                            alt="PHP" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        Python
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                            alt="Python" width="40" height="40">
+                    </li>
+                    <li class="about__skill-item">
+                        React
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+                            alt="React" width="40" height="40">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="footnote">
+            <div class="social-links" aria-label="Social media links">
+                <a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
+                    aria-label="LinkedIn profile">
+                    <img src="src/images/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/ClaeysMaxim" target="_blank" aria-label="GitHub profile">
+                    <img src="src/images/icons/github.svg" alt="GitHub">
+                </a>
+            </div>
+            <p>© 2025 Maxim Claeys</p>
+        </div>
+    </footer>
+    <script src="build/app.js"></script>
+</body>
+
+</html>

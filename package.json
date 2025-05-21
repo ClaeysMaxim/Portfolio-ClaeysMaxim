@@ -1,0 +1,29 @@
+{
+  "name": "portfolio-front-end-claeysmaxim",
+  "version": "1.0.0",
+  "description": "Portfolio Claeys Maxim",
+  "homepage": "https://github.com/pgmgent-web-3/portfolio-front-end-ClaeysMaxim#readme",
+  "bugs": {
+    "url": "https://github.com/pgmgent-web-3/portfolio-front-end-ClaeysMaxim/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgmgent-web-3/portfolio-front-end-ClaeysMaxim.git"
+  },
+  "license": "ISC",
+  "author": "Maxim Claeys",
+  "main": "index.js",
+  "scripts": {
+    "start": "mix",
+    "watch": "mix watch",
+    "build": "mix --production",
+    "dev": "postcss ./src/styles/main.css --dir build --watch"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.49",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-for": "^2.1.1",
+    "postcss-nested": "^6.0.1"
+  }
+}

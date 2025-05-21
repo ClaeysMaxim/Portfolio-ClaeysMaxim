@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="src/styles/main.css">
+    <title>Home | Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav class="ham__menu" aria-label="Main navigation">
+            <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
+            <div class="right-buttons" aria-label="Theme toggle">
+                <button id="theme-toggle-sun" class="ham__sun" aria-label="Switch to light mode">
+                    <img src="src/images/icons/sun.svg" alt="Sun icon">
+                </button>
+                <button id="theme-toggle-moon" class="ham__moon" aria-label="Switch to dark mode">
+                    <img src="src/images/icons/moon.svg" alt="Moon icon">
+                </button>
+            </div>
+            <button class="ham__burger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <img src="src/images/icons/burger.svg" alt="Menu icon">
+            </button>
+            <ul class="nav-links" id="nav-links" aria-label="Site navigation">
+                <li><a class="active-page" href="index.html" aria-current="page">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" aria-labelledby="intro-heading">
+        <section class="intro__homepage" aria-labelledby="intro-heading">
+            <h1 id="intro-heading" class="intro__title__homepage">Welkom op mijn Portfolio</h1>
+            <div class="intro__block__homepage">
+                <p class="intro__info__homepage">
+                    Hallo! Ik ben een gepassioneerde ontwikkelaar met een liefde voor het creëren van intuïtieve en
+                    toegankelijke web-ervaringen. Met een achtergrond in zowel design als ontwikkeling, streven ik
+                    ernaar om websites te bouwen die niet alleen visueel aantrekkelijk zijn, maar ook functioneel en
+                    gebruiksvriendelijk.
+                </p>
+                <p class="intro__info__homepage">
+                    Op deze pagina vind je een selectie van mijn favoriete projecten waar ik trots op ben. Elk project
+                    vertegenwoordigt een unieke uitdaging en een kans om mijn vaardigheden te verbeteren. Van front-end
+                    design tot back-end functionaliteit, ik hou me bezig met de nieuwste technologieën om innovatieve
+                    oplossingen te bieden.
+                </p>
+                <div class="intro__actions">
+                    <a class="link-button" href="projects.html" aria-label="Bekijk mijn projecten">
+                        Bekijk mijn projecten <img src="src/images/icons/arrow-right.svg" alt="Arrow right">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects__section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Uitgelichte Projecten</h2>
+
+            <div class="carousel" aria-roledescription="carousel" aria-label="Uitgelichte projecten carousel">
+                <div class="carousel__track">
+                    <div class="carousel__slide active" role="group" aria-roledescription="slide" aria-label="1 van 3"
+                        aria-current="true">
+                        <div class="project__item">
+                            <img src="src/images/projectImages/make-IT-happen.png"
+                                alt="Afbeelding van Make IT Happen project">
+                            <h3>Make IT Happen</h3>
+                            <p>
+                                Dit is een project waar je jouw to-do's kan bijhouden en ook kan filteren op categorie.
+                                Ook zit er een login aan verbonden zodat je waar en wanneer je maar wil kan inloggen om
+                                je to-do's te raadplegen.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 van 3"
+                        aria-hidden="true">
+                        <div class="project__item">
+                            <img src="src/images/projectImages/stam.png" alt="Afbeelding van STAM project">
+                            <h3>STAM Ghent - remake</h3>
+                            <p>
+                                Hier kregen we de opdracht om de website van het STAM museum te gent na te maken, echter
+                                wel op een vereenvoudigde manier.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 van 3"
+                        aria-hidden="true">
+                        <div class="project__item">
+                            <img src="src/images/projectImages/no-planetB.png" alt="Afbeelding van No Planet B project">
+                            <h3>No Planet B</h3>
+                            <p>
+                                In dit project leerden we vooral om te gaan met een responsive design voor websites. We
+                                kregen pdf's van de verschillende schermgroottes en kregen de opdracht om deze zo goed
+                                mogelijk na te maken.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel__nav" role="tablist" aria-label="Carousel navigatie">
+                    <button class="carousel__indicator active" role="tab" aria-label="Ga naar slide 1"
+                        aria-selected="true" aria-controls="slide-1"></button>
+                    <button class="carousel__indicator" role="tab" aria-label="Ga naar slide 2" aria-selected="false"
+                        aria-controls="slide-2"></button>
+                    <button class="carousel__indicator" role="tab" aria-label="Ga naar slide 3" aria-selected="false"
+                        aria-controls="slide-3"></button>
+                </div>
+            </div>
+        </section>
+
+        <dialog id="info-popover" class="popover about__popover">
+            <form method="dialog">
+                <p>Dit is een popover met aanvullende informatie over mijn projecten en vaardigheden.</p>
+                <button id="close-info-popover" aria-label="Close"
+                    class="close-button about__close-button">Sluiten</button>
+            </form>
+        </dialog>
+    </main>
+    <footer role="contentinfo">
+        <div class="footnote">
+            <div class="social-links" aria-label="Social media links">
+                <a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
+                    aria-label="LinkedIn profile">
+                    <img src="src/images/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/ClaeysMaxim" target="_blank" aria-label="GitHub profile">
+                    <img src="src/images/icons/github.svg" alt="GitHub">
+                </a>
+            </div>
+            <p>© 2025 Maxim Claeys</p>
+        </div>
+    </footer>
+    <script src="build/app.js"></script>
+</body>
+
+</html>

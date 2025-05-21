@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/src/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="src/styles/main.css">
+    <title>Projects | Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav class="ham__menu" aria-label="Main navigation">
+            <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
+            <div class="right-buttons" aria-label="Theme toggle">
+                <button id="theme-toggle-sun" class="ham__sun" aria-label="Switch to light mode">
+                    <img src="src/images/icons/sun.svg" alt="Sun icon">
+                </button>
+                <button id="theme-toggle-moon" class="ham__moon" aria-label="Switch to dark mode">
+                    <img src="src/images/icons/moon.svg" alt="Moon icon">
+                </button>
+            </div>
+            <button class="ham__burger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <img src="src/images/icons/burger.svg" alt="Menu icon">
+            </button>
+            <ul class="nav-links" id="nav-links" aria-label="Site navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active-page" href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" aria-labelledby="projects-heading">
+        <section class="intro" aria-labelledby="projects-heading">
+            <h1 id="projects-heading" class="projects__heading">My Projects</h1>
+            <div class="projects__container" aria-label="Projects gallery">
+                <div class="projects__grid">
+                    <!-- Project 1 -->
+                    <article class="project__card" aria-labelledby="project1-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/make-IT-happen.png"
+                                alt="Screenshot of Make IT Happen to-do application interface" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project1-title" class="project__title">Make IT Happen</h2>
+                            <p class="project__description">
+                                Dit is een project waar je jouw to-do's kan bijhouden en ook kan filteren op categorie.
+                                Ook zit er een login aan verbonden zodat je waar en wanneer je maar wil kan inloggen om
+                                je to-do's te raadplegen.
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project1-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project__card" aria-labelledby="project2-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/stam.png"
+                                alt="Screenshot of STAM Ghent museum website remake" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project2-title" class="project__title">STAM Ghent - Remake</h2>
+                            <p class="project__description">
+                                Hier kregen we de opdracht om de website van het STAM museum te gent na te maken, echter
+                                wel op een vereenvoudigde manier.
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project2-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project__card" aria-labelledby="project3-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/no-planetB.png"
+                                alt="Screenshot of No Planet B responsive environmental website" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project3-title" class="project__title">No Planet B</h2>
+                            <p class="project__description">
+                                In dit project leerden we vooral om te gaan met een responsive design voor websites. We
+                                kregen pdf's van de verschillende schermgroottes en kregen de opdracht om deze zo goed
+                                mogelijk na te maken.
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project3-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project__card" aria-labelledby="project4-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/1e-portfolio.png"
+                                alt="Screenshot of my first animated portfolio website" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project4-title" class="project__title">1e Portfolio</h2>
+                            <p class="project__description">
+                                In dit project lag de prioriteit vooral op overdreven animaties toe te voegen aan de
+                                webpagina, vandaar dus ook de vreemde opmaak en positie van element.
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project4-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project__card" aria-labelledby="project5-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/nexu.png"
+                                alt="Screenshot of Nexu Bank App UI design mockup" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project5-title" class="project__title">Nexu Bank App Design</h2>
+                            <p class="project__description">
+                                Eenvoudig maar effectief ontwerp voor een bank-app genaamd NEXU.
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project5-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project__card" aria-labelledby="project6-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/pixel-pioneers.png"
+                                alt="Screenshot of Pixel Pioneers agency landing page" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project6-title" class="project__title">Pixel Pioneers</h2>
+                            <p class="project__description">
+                                Voor Web Development 1 kregen we de opdracht om een eenvoudig, fictief agency op te
+                                stellen. Zo moesten we een landing page creëren.
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project6-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 7 -->
+                    <article class="project__card" aria-labelledby="project7-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/weather-dashboard.png"
+                                alt="Screenshot of Weather Dashboard showing forecast interface" class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project7-title" class="project__title">Weather Dashboard</h2>
+                            <p class="project__description">
+                                Dit was een projectje van toen ik nog maar net begon met programmeren. Er was heel erg
+                                veel gekopieerd van het internet en ik ben het project zelf verloren ik heb enkel deze
+                                afbeelding nog...
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project7-description">Details</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 8 -->
+                    <article class="project__card" aria-labelledby="project8-title">
+                        <div class="project__image-container">
+                            <img src="src/images/projectImages/budget-tracker.png"
+                                alt="Screenshot of Personal Budget Tracker app with income and expense tracking"
+                                class="project__image">
+                        </div>
+                        <div class="project__content">
+                            <h2 id="project8-title" class="project__title">Personal Budget Tracker</h2>
+                            <p class="project__description">
+                                Dit is een project buiten school waar ik zat te experimenteren met react om zo een app
+                                te bouwen die je inkomsten en uitgaven bijhoudt!
+                            </p>
+                            <button class="project__details-btn" aria-expanded="false"
+                                aria-controls="project8-description">Details</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footnote">
+            <div class="social-links" aria-label="Social media links">
+                <a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
+                    aria-label="LinkedIn profile">
+                    <img src="src/images/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/ClaeysMaxim" target="_blank" aria-label="GitHub profile">
+                    <img src="src/images/icons/github.svg" alt="GitHub">
+                </a>
+            </div>
+            <p>© 2025 Maxim Claeys</p>
+        </div>
+    </footer>
+    <script src="build/app.js"></script>
+</body>
+
+</html>

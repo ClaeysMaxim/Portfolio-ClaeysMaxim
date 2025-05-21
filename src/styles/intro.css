@@ -1,0 +1,8 @@
+.intro {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.projects__heading {
+  padding-bottom: var(--space-md);
+}

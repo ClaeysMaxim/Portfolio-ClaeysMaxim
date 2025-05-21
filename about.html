@@ -14,6 +14,14 @@
 </head>
 
 <body>
+    <script>
+        // Apply theme immediately before page renders
+        (function () {
+            const savedTheme = localStorage.getItem("theme") || "darkmode";
+            document.documentElement.classList.toggle("lightmode", savedTheme === "lightmode");
+            document.documentElement.classList.toggle("darkmode", savedTheme === "darkmode");
+        })();
+    </script>
     <header>
         <nav class="ham__menu" aria-label="Main navigation">
             <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>

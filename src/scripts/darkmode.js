@@ -1,4 +1,4 @@
-// Function to handle theme application immediately
+// Simplified darkmode implementation
 function applyTheme(theme) {
   document.documentElement.classList.toggle("lightmode", theme === "lightmode");
   document.documentElement.classList.toggle("darkmode", theme === "darkmode");
@@ -16,52 +16,27 @@ function applyTheme(theme) {
   }
 }
 
-// Apply saved theme immediately before DOM is fully loaded
+// Apply saved theme immediately
 (function () {
   const savedTheme = localStorage.getItem("theme") || "darkmode";
   applyTheme(savedTheme);
 })();
 
-// Full setup function for when DOM is ready
 export function setupDarkMode() {
   const $sunButton = document.querySelector("#theme-toggle-sun");
   const $moonButton = document.querySelector("#theme-toggle-moon");
 
   if (!$sunButton || !$moonButton) return;
 
-  function applyTheme(theme) {
-    document.documentElement.classList.toggle(
-      "lightmode",
-      theme === "lightmode"
-    );
-    document.documentElement.classList.toggle("darkmode", theme === "darkmode");
-
-    $sunButton.style.display = theme === "lightmode" ? "none" : "block";
-    $moonButton.style.display = theme === "lightmode" ? "block" : "none";
-  }
-
   function toggleTheme() {
-    const newTheme = document.documentElement.classList.contains("lightmode")
+    const currentTheme = document.documentElement.classList.contains("lightmode")
       ? "darkmode"
       : "lightmode";
-
-    localStorage.setItem("theme", newTheme);
-    applyTheme(newTheme);
+    localStorage.setItem("theme", currentTheme);
+    applyTheme(currentTheme);
   }
 
+  // Set up event listeners
   $sunButton.addEventListener("click", toggleTheme);
   $moonButton.addEventListener("click", toggleTheme);
-
-  const savedTheme = localStorage.getItem("theme") || "darkmode";
-  applyTheme(savedTheme);
-}
-
-// Also run setup immediately if document is already loaded
-if (
-  document.readyState === "complete" ||
-  document.readyState === "interactive"
-) {
-  setupDarkMode();
-} else {
-  document.addEventListener("DOMContentLoaded", setupDarkMode);
 }

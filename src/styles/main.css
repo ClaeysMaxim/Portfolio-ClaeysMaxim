@@ -12,6 +12,13 @@
 @import url("./projectsPage.css");
 @import url("./carousel.css");
 @import url("./masks.css");
+@import url("./animations.css");
+@import url("./projectFilters.css");
+@import url("./funFacts.css");
+@import url("./typingEffect.css");
+@import url("./breadcrumb.css");
+@import url("./accessibility.css");
+@import url("./skillBars.css");
 
 html,
 body {

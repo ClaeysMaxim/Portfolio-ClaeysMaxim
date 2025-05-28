@@ -25,8 +25,10 @@
   box-shadow: var(--shadow-sm);
   display: grid;
   grid-template-rows: var(--size-200) auto;
-  transition: transform var(--transition-fast),
-    box-shadow var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    min-height var(--transition-medium);
 
   &:hover {
     transform: translateY(var(--space-neg-xs));
@@ -39,7 +41,7 @@
 }
 
 .project__image-container {
-  height: var(--width-100);
+  height: var(--size-200);
   overflow: hidden;
 }
 
@@ -47,24 +49,35 @@
   width: var(--width-100);
   height: var(--height-100);
   object-fit: cover;
+  transition: transform var(--transition-medium);
 }
 
 .project__content {
   padding: var(--space-md);
   text-align: center;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto auto;
   gap: var(--space-md);
 }
 
 .project__title {
-  font-size: var(--space-lg);
+  font-size: var(--font-size-lg);
 }
 
 .project__description {
-  display: none;
-  font-size: var(--space-md);
+  font-size: var(--font-size-sm);
   color: var(--tint-color);
+  line-height: var(--line-height-normal);
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all var(--transition-medium) ease;
+}
+
+.project__description.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project__details-btn {
@@ -74,8 +87,8 @@
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--space-xs);
   cursor: pointer;
-  margin-top: auto;
   justify-self: center;
+  transition: background-color var(--transition-fast);
 
   &:hover {
     background-color: var(--accent-subtle-color);
@@ -99,10 +112,5 @@
     grid-template-columns: repeat(3, 1fr);
     max-width: var(--size-1400);
     gap: var(--space-md);
-  }
-
-  .project__card {
-    grid-template-rows: var(--size-200) auto;
-    width: var(--width-100);
   }
 }

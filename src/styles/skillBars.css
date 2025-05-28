@@ -1,0 +1,205 @@
+.skills-section {
+  margin-top: var(--space-xxl);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--shade-color), var(--subtle-color));
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.skills-section__title {
+  font-size: var(--font-size-xxl);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  color: var(--contrast-color);
+  position: relative;
+}
+
+.skills-section__title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--accent-subtle-color)
+  );
+  border-radius: var(--radius-xs);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  max-width: var(--size-800);
+  margin: 0 auto;
+}
+
+.skill-progress {
+  background-color: var(--base-color);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  border: 1px solid var(--subtle-color);
+  outline: none !important;
+}
+
+.skill-progress:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-progress:focus {
+  outline: none !important;
+}
+
+.skill-progress:focus-visible {
+  outline: none !important;
+}
+
+.skill-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.skill-progress__name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--contrast-color);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.skill-progress__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.skill-progress__percentage {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--accent-color);
+  min-width: 40px;
+  text-align: right;
+}
+
+.skill-progress__bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--subtle-color);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress__bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+  opacity: 0;
+}
+
+.skill-progress:hover .skill-progress__bar::before {
+  opacity: 1;
+}
+
+.skill-progress__bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color),
+    var(--accent-subtle-color)
+  );
+  border-radius: var(--radius-xs);
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress__bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+  animation: progress-shine 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progress-shine {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-10px);
+  }
+}
+
+/* Responsive layout */
+@media (min-width: 48rem) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+@media (min-width: 64rem) {
+  .skills-section {
+    padding: var(--space-xxl);
+  }
+
+  .skills-section__title {
+    font-size: var(--font-size-xxxl);
+  }
+}
+
+/* Fun hover effects for different skill categories */
+.skill-progress[data-category="frontend"]:hover {
+  border-color: #61dafb; /* React blue */
+}
+
+.skill-progress[data-category="backend"]:hover {
+  border-color: #339933; /* Node green */
+}
+
+.skill-progress[data-category="design"]:hover {
+  border-color: #f24e1e; /* Figma orange */
+}
+
+.skill-progress[data-category="database"]:hover {
+  border-color: #4479a1; /* MySQL blue */
+}

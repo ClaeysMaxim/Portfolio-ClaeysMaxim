@@ -33,18 +33,31 @@ export function setupCarousel() {
     currentSlide = index;
   }
 
+  // Navigation functions
+  function nextSlide() {
+    showSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1);
+  }
+
   // Indicator click handlers
   indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", () => showSlide(index));
+    indicator.addEventListener("click", () => {
+      showSlide(index);
+    });
   });
 
   // Touch swipe functionality
   let touchStartX = 0;
+  let touchStartY = 0;
 
   carousel.addEventListener(
     "touchstart",
     (e) => {
       touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
     },
     { passive: true }
   );
@@ -53,15 +66,54 @@ export function setupCarousel() {
     "touchend",
     (e) => {
       const touchEndX = e.changedTouches[0].clientX;
-      const diff = touchStartX - touchEndX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const diffX = touchStartX - touchEndX;
+      const diffY = touchStartY - touchEndY;
 
-      if (Math.abs(diff) > 50) {
-        showSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+      // Only trigger if horizontal swipe is more significant than vertical
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        showSlide(diffX > 0 ? currentSlide + 1 : currentSlide - 1);
       }
     },
     { passive: true }
   );
 
+  // Desktop arrow navigation
+  function addDesktopNavigation() {
+    if (window.innerWidth >= 768) {
+      carousel.addEventListener("click", (e) => {
+        const rect = carousel.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const carouselWidth = rect.width;
+
+        // Left arrow area (first 80px)
+        if (clickX < 80) {
+          prevSlide();
+        }
+        // Right arrow area (last 80px)
+        else if (clickX > carouselWidth - 80) {
+          nextSlide();
+        }
+      });
+    }
+  }
+
+  // Keyboard navigation
+  carousel.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      prevSlide();
+    } else if (e.key === "ArrowRight") {
+      nextSlide();
+    }
+  });
+
+  // Make carousel focusable for keyboard navigation
+  carousel.setAttribute("tabindex", "0");
+
   // Initialize
   showSlide(0);
+  addDesktopNavigation();
+
+  // Handle window resize
+  window.addEventListener("resize", addDesktopNavigation);
 }

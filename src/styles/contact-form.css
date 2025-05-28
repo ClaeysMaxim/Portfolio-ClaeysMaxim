@@ -7,8 +7,10 @@
   transform: translateX(0);
   opacity: 1;
   background-color: var(--subtle-color);
-  transition: transform var(--transition-very-slow) ease-out,
-    opacity var(--transition-very-slow) ease-out, background-color 2s ease-out;
+  transition:
+    transform var(--transition-very-slow) ease-out,
+    opacity var(--transition-very-slow) ease-out,
+    background-color 2s ease-out;
 }
 
 .contact-form__label {
@@ -28,7 +30,8 @@
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.05);
   color: var(--contrast-color);
-  transition: border-color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
@@ -50,7 +53,8 @@
   min-height: 8rem;
   background-color: rgba(255, 255, 255, 0.05);
   color: var(--contrast-color);
-  transition: border-color var(--transition-fast),
+  transition:
+    border-color var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
@@ -62,7 +66,8 @@
   color: var(--contrast-color);
   cursor: pointer;
   transform: rotate(0deg) scale(1);
-  transition: transform var(--transition-very-slow) ease-out,
+  transition:
+    transform var(--transition-very-slow) ease-out,
     background-color var(--transition-fast);
   display: grid;
   grid-template-columns: auto auto;
@@ -119,21 +124,20 @@
 }
 
 .contact-option {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding: var(--space-md);
+  padding: var(--space-lg);
   border-radius: var(--radius-sm);
-  background-color: var(--shade-color);
-  transition: transform var(--transition-fast),
-    box-shadow var(--transition-fast);
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
-  opacity: 0;
+  transition: all var(--transition-fast) ease;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--subtle-color);
 }
 
 .contact-option:hover {
-  transform: translateY(-4px);
+  background-color: var(--shade-color);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 

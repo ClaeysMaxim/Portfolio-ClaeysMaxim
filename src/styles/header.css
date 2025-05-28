@@ -119,6 +119,17 @@ button {
   text-align: center;
 }
 
+/* Remove focus borders from all navigation elements */
+.ham__menu *:focus,
+.ham__title:focus,
+.ham__burger:focus,
+.ham__sun:focus,
+.ham__moon:focus,
+.nav-links a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* Combined media query for desktop navigation */
 @media (min-width: 48rem) {
   .ham__menu {

@@ -14,22 +14,26 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
+
     <header>
-        <nav class="ham__menu" aria-label="Main navigation">
-            <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
-            <div class="right-buttons" aria-label="Theme toggle">
-                <button id="theme-toggle-sun" class="ham__sun" aria-label="Switch to light mode">
-                    <img src="src/images/icons/sun.svg" alt="Sun icon">
+        <nav class="ham__menu" aria-label="Hoofdnavigatie">
+            <a class="ham__title" href="index.html">Portfolio</a>
+            <div class="right-buttons">
+                <button id="theme-toggle-sun" class="ham__sun" aria-label="Schakel naar lichte modus"
+                    title="Lichte modus">
+                    <img src="src/images/icons/sun.svg" alt="" aria-hidden="true">
                 </button>
-                <button id="theme-toggle-moon" class="ham__moon" aria-label="Switch to dark mode">
-                    <img src="src/images/icons/moon.svg" alt="Moon icon">
+                <button id="theme-toggle-moon" class="ham__moon" aria-label="Schakel naar donkere modus"
+                    title="Donkere modus">
+                    <img src="src/images/icons/moon.svg" alt="" aria-hidden="true">
                 </button>
             </div>
-            <button class="ham__burger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"
+            <button class="ham__burger" id="hamburger" aria-label="Menu openen" aria-expanded="false"
                 aria-controls="nav-links">
-                <img src="src/images/icons/burger.svg" alt="Menu icon">
+                <img src="src/images/icons/burger.svg" alt="" aria-hidden="true">
             </button>
-            <ul class="nav-links" id="nav-links" aria-label="Site navigation">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a class="active-page" href="about.html" aria-current="page">About</a></li>
@@ -37,11 +41,12 @@
             </ul>
         </nav>
     </header>
-    <main id="main-content" tabindex="-1" aria-labelledby="about-heading" role="main">
-        <section class="about" aria-labelledby="about-heading">
-            <h1 id="about-heading" class="about__title">Wie ben ik?</h1>
-            <div class="about__profile" aria-label="Profile information">
-                <img src="src/images/profile.png" alt="Profile picture of Claeys Maxim" class="about__photo">
+
+    <main id="main-content" tabindex="-1" role="main">
+        <section class="about">
+            <h1 class="about__title">Wie ben ik?</h1>
+            <div class="about__profile">
+                <img src="src/images/profile.png" alt="Profielfoto van Claeys Maxim" class="about__photo">
                 <div class="about__bio">
                     <p class="about__description">
                         Welkom op mijn portfolio! Ik ben een gepassioneerde ontwikkelaar met een liefde voor het creëren
@@ -49,12 +54,11 @@
                         ontwikkeling, streven ik ernaar om websites te bouwen die niet alleen visueel aantrekkelijk
                         zijn, maar ook functioneel en gebruiksvriendelijk.
                     </p>
-                    <button id="open-info-popover" class="about__popover-button" popovertarget="info-popover"
-                        aria-describedby="info-popover" aria-label="More information about me">
+                    <button id="open-info-popover" class="about__popover-button" popovertarget="info-popover">
                         Meer Info
                     </button>
-                    <dialog id="info-popover" class="about__popover" popover aria-labelledby="popover-title">
-                        <h2 id="popover-title">Meer Info</h2>
+                    <dialog id="info-popover" class="about__popover" popover>
+                        <h2>Meer Info</h2>
                         <p>
                             Naast mijn passie voor webontwikkeling ben ik altijd op zoek naar nieuwe technologieën en
                             tools om mijn werk te verbeteren.
@@ -64,23 +68,22 @@
                             Mijn doel is om innovatieve oplossingen te creëren die zowel functioneel als esthetisch
                             aantrekkelijk zijn.
                         </p>
-                        <button id="close-info-popover" class="about__close-button"
-                            aria-label="Close popover">Sluiten</button>
+                        <button id="close-info-popover" class="about__close-button">Sluiten</button>
                     </dialog>
                 </div>
             </div>
-            <div class="about__skills" aria-labelledby="skills-heading">
-                <h2 id="skills-heading" class="about__subtitle">Vaardigheden</h2>
-                <ul class="about__skills-list" aria-label="List of skills">
+            <div class="about__skills">
+                <h2 class="about__subtitle">Vaardigheden</h2>
+                <ul class="about__skills-list">
                     <li class="about__skill-item">
                         HTML & CSS
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-                            alt="HTML5" width="40" height="40">
+                            alt="" width="40" height="40" aria-hidden="true">
                     </li>
                     <li class="about__skill-item">
                         JavaScript
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-                            alt="JavaScript" width="40" height="40">
+                            alt="" width="40" height="40" aria-hidden="true">
                     </li>
                     <li class="about__skill-item">
                         Docker
@@ -129,8 +132,169 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- NEW: Skills Progress Section -->
+            <section class="skills-section">
+                <h2 class="skills-section__title">Skill Levels</h2>
+                <div class="skills-grid">
+                    <div class="skill-progress" data-category="frontend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                HTML & CSS
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="frontend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                JavaScript
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="frontend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                React
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="backend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                Node.js
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="backend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                PHP
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="backend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                Python
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="database">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                MySQL
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="frontend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt=""
+                                    class="skill-progress__icon" aria-hidden="true">
+                                Git
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="design">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt=""
+                                    class="skill-progress__icon" aria-hidden="true">
+                                Figma
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="backend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                Docker
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-progress" data-category="backend">
+                        <div class="skill-progress__header">
+                            <span class="skill-progress__name">
+                                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+                                    alt="" class="skill-progress__icon" aria-hidden="true">
+                                Express
+                            </span>
+                            <span class="skill-progress__percentage">0%</span>
+                        </div>
+                        <div class="skill-progress__bar">
+                            <div class="skill-progress__bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
+
     <footer role="contentinfo">
         <div class="footnote">
             <div class="social-links" aria-label="Social media links">

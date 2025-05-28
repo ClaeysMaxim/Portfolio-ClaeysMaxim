@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
     <header>
         <nav class="ham__menu" aria-label="Main navigation">
             <a class="ham__title" href="index.html" aria-label="Go to homepage">Portfolio</a>
@@ -38,7 +39,7 @@
         </nav>
     </header>
 
-    <main role="main" aria-labelledby="contact-heading">
+    <main id="main-content" role="main" aria-labelledby="contact-heading">
         <section class="contact-hero">
             <div class="contact-hero__content">
                 <h1 id="contact-heading" class="contact-hero__title" aria-label="Contact me">Contacteer mij</h1>
@@ -50,38 +51,36 @@
 
                 <h2 class="contact-options-title">Contact opties</h2>
                 <div class="contact-options" aria-label="Contact options">
-                    <div class="contact-option">
+                    <a href="mailto:maxim.claeys@student.arteveldehs.be" class="contact-option">
                         <div class="contact-option__icon">
-                            <img src="src/images/icons/email.svg" alt="Email icon">
+                            <img src="src/images/icons/email.svg" alt="" aria-hidden="true">
                         </div>
                         <div class="contact-option__text">
                             <h3>Email</h3>
                             <p>maxim.claeys@student.arteveldehs.be</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="contact-option">
+                    <a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
+                        class="contact-option">
                         <div class="contact-option__icon">
-                            <img src="src/images/icons/linkedin.svg" alt="LinkedIn icon">
+                            <img src="src/images/icons/linkedin.svg" alt="" aria-hidden="true">
                         </div>
                         <div class="contact-option__text">
                             <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/maxim-claeys-871404237/" target="_blank"
-                                    aria-label="Visit my LinkedIn profile">Maxim
-                                    Claeys</a></p>
+                            <p>Maxim Claeys</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="contact-option">
+                    <a href="https://github.com/ClaeysMaxim" target="_blank" class="contact-option">
                         <div class="contact-option__icon">
-                            <img src="src/images/icons/github.svg" alt="GitHub icon">
+                            <img src="src/images/icons/github.svg" alt="" aria-hidden="true">
                         </div>
                         <div class="contact-option__text">
                             <h3>GitHub</h3>
-                            <p><a href="https://github.com/ClaeysMaxim" target="_blank"
-                                    aria-label="Visit my GitHub profile">ClaeysMaxim</a></p>
+                            <p>ClaeysMaxim</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
@@ -90,45 +89,42 @@
         <section class="contact-form-section" aria-label="Contact form section">
             <div class="contact-form-container">
                 <h2 class="contact-form__title" aria-label="Send a message">Stuur een bericht</h2>
-                <form action="#" method="post" class="contact-form__form" aria-label="Contact form"
-                    aria-describedby="form-description">
-                    <p id="form-description" class="sr-only" aria-label="Fill out this form to contact me">Vul dit
-                        formulier in om contact met
-                        mij op te nemen.</p>
-
+                <form action="#" method="post" class="contact-form__form" novalidate>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name" class="contact-form__label">Naam</label>
+                            <label for="name" class="contact-form__label">Naam *</label>
                             <input type="text" id="name" name="name" class="contact-form__input"
-                                placeholder="Bert Koert" required aria-required="true" aria-label="Your name">
+                                placeholder="Bert Koert" required aria-describedby="name-error">
+                            <div id="name-error" class="form-error" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="contact-form__label">Email</label>
+                            <label for="email" class="contact-form__label">Email *</label>
                             <input type="email" id="email" name="email" class="contact-form__input"
-                                placeholder="naam@example.be" required aria-required="true"
-                                aria-label="Your email address">
+                                placeholder="naam@example.be" required aria-describedby="email-error">
+                            <div id="email-error" class="form-error" aria-live="polite"></div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="subject" class="contact-form__label">Onderwerp</label>
                         <input type="text" id="subject" name="subject" class="contact-form__input"
-                            placeholder="Waarover gaat je bericht?" aria-label="Subject of your message">
+                            placeholder="Waarover gaat je bericht?">
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="contact-form__label">Bericht</label>
+                        <label for="message" class="contact-form__label">Bericht *</label>
                         <textarea id="message" name="message" class="contact-form__textarea"
-                            placeholder="Vertel me meer over je vraag of project" required aria-required="true"
-                            aria-label="Your message"></textarea>
+                            placeholder="Vertel me meer over je vraag of project" required
+                            aria-describedby="message-error"></textarea>
+                        <div id="message-error" class="form-error" aria-live="polite"></div>
                     </div>
 
-                    <div class="form-feedback sr-only" aria-live="polite"></div>
+                    <div class="form-feedback" aria-live="polite" aria-atomic="true"></div>
 
-                    <button type="submit" class="contact-form__button" aria-label="Send message">
+                    <button type="submit" class="contact-form__button">
                         <span>Verstuur</span>
-                        <img src="src/images/icons/arrow-right.svg" alt="" class="button-icon">
+                        <img src="src/images/icons/arrow-right.svg" alt="" aria-hidden="true" class="button-icon">
                     </button>
                 </form>
             </div>

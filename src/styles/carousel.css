@@ -1,7 +1,7 @@
 .carousel {
   position: relative;
   width: var(--width-100);
-  max-width: var(--size-900);
+  max-width: var(--size-1200);
   margin: 0 auto;
   padding: var(--space-md);
   overflow: hidden;
@@ -13,6 +13,7 @@
   grid-template-columns: repeat(3, 100%);
   transform: translateX(0);
   transition: transform var(--transition-medium) ease-in-out;
+  gap: var(--space-md);
 }
 
 .carousel__slide {
@@ -20,14 +21,16 @@
   transform: scale(0.9);
   transition: transform var(--transition-medium) ease;
   padding: var(--space-md);
-  user-select: none; /* Prevent text selection during swipe */
+  user-select: none;
   display: grid;
-  justify-items: center; /* Center items horizontally */
-  min-height: var(--size-500);
+  justify-items: center;
+  min-height: var(--size-400);
+  opacity: 0.7;
 }
 
 .carousel__slide.active {
   transform: scale(1);
+  opacity: 1;
 }
 
 .carousel__nav {
@@ -35,7 +38,7 @@
   grid-template-columns: repeat(3, auto);
   gap: var(--space-md);
   justify-content: center;
-  margin-top: var(--space-sm);
+  margin-top: var(--space-lg);
 }
 
 .carousel__indicator {
@@ -45,8 +48,25 @@
   border: none;
   border-radius: var(--radius-xs);
   cursor: pointer;
-  transition: background-color var(--transition-fast),
-    width var(--transition-fast);
+  outline: none;
+  transition:
+    background-color var(--transition-fast),
+    width var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.carousel__indicator:hover {
+  background-color: var(--tint-color);
+  transform: scale(1.1);
+}
+
+.carousel__indicator:focus {
+  outline: none;
+}
+
+.carousel__indicator:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 .carousel__indicator.active {
@@ -55,22 +75,39 @@
 }
 
 .carousel .project__item {
-  max-width: var(--size-800);
-  height: var(--height-100);
+  max-width: var(--size-400);
+  height: auto;
+  min-height: var(--size-350);
   display: grid;
-  grid-template-rows: auto auto 1fr; /* Image, heading, and text */
+  grid-template-rows: auto auto 1fr;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast) ease;
+}
+
+.carousel .project__item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
 .carousel .project__item img {
   width: var(--width-100);
-  height: var(--size-250);
+  height: var(--size-200);
   object-fit: cover;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: transform var(--transition-medium) ease;
+}
+
+.carousel .project__item:hover img {
+  transform: scale(1.05);
 }
 
 .carousel .project__item h3 {
   margin: var(--space-md) 0 var(--space-sm);
   padding: 0 var(--space-md);
+  font-size: var(--font-size-lg);
+  color: var(--contrast-color);
 }
 
 .carousel .project__item p {
@@ -78,6 +115,109 @@
   grid-row: 3;
   display: block;
   overflow: auto;
-  max-height: var(--size-200);
   text-align: center;
+  line-height: var(--line-height-normal);
+  color: var(--tint-color);
+}
+
+/* Desktop improvements */
+@media (min-width: 48rem) {
+  .carousel {
+    max-width: var(--size-1200);
+    padding: var(--space-xl);
+  }
+
+  .carousel__track {
+    gap: var(--space-lg);
+  }
+
+  .carousel__slide {
+    min-height: var(--size-450);
+    padding: var(--space-lg);
+  }
+
+  .carousel .project__item {
+    max-width: var(--size-500);
+    min-height: var(--size-400);
+  }
+
+  .carousel .project__item img {
+    height: var(--size-250);
+  }
+
+  .carousel .project__item h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  .carousel .project__item p {
+    font-size: var(--font-size-md);
+  }
+
+  /* Add navigation arrows for desktop */
+  .carousel::before,
+  .carousel::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--size-40);
+    height: var(--size-40);
+    background-color: var(--accent-color);
+    border-radius: var(--radius-round);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+    z-index: 10;
+  }
+
+  .carousel::before {
+    left: var(--space-md);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+  }
+
+  .carousel::after {
+    right: var(--space-md);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+  }
+
+  .carousel:hover::before,
+  .carousel:hover::after {
+    opacity: 1;
+  }
+
+  .carousel__nav {
+    margin-top: var(--space-xl);
+    gap: var(--space-lg);
+  }
+
+  .carousel__indicator {
+    width: var(--space-lg);
+    height: var(--space-xs);
+  }
+
+  .carousel__indicator.active {
+    width: var(--space-xxl);
+  }
+}
+
+/* Large desktop improvements */
+@media (min-width: 64rem) {
+  .carousel {
+    max-width: var(--size-1400);
+  }
+
+  .carousel .project__item {
+    max-width: var(--size-600);
+    min-height: var(--size-450);
+  }
+
+  .carousel .project__item img {
+    height: var(--size-300);
+  }
 }

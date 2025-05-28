@@ -1,0 +1,56 @@
+/* Typing Effect Styles */
+.intro__title__homepage {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Blinking cursor animation */
+@keyframes blink-cursor {
+  0%,
+  50% {
+    border-color: var(--accent-color);
+  }
+  51%,
+  100% {
+    border-color: transparent;
+  }
+}
+
+/* Alternative typing effect with typewriter cursor */
+.typing-cursor::after {
+  content: "|";
+  color: var(--accent-color);
+  animation: blink-cursor 1s infinite;
+  font-weight: normal;
+}
+
+/* Responsive adjustments */
+@media (max-width: 48rem) {
+  .intro__title__homepage {
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
+/* Enhanced typing effect for multiple lines on mobile */
+@media (max-width: 36rem) {
+  .intro__title__homepage {
+    font-size: var(--font-size-xxxl);
+    line-height: var(--line-height-tight);
+  }
+}
+
+/* Smooth transition when typing completes */
+.typing-complete {
+  animation: typing-complete-glow 0.5s ease-in-out;
+}
+
+@keyframes typing-complete-glow {
+  0% {
+    text-shadow: 0 0 5px var(--accent-color);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
